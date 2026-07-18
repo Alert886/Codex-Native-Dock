@@ -6,6 +6,12 @@ $temporary = Join-Path ([IO.Path]::GetTempPath()) ('codex-native-dock-package-' 
 $folderName = "Codex-Native-Dock-v$version"
 $stage = Join-Path $temporary $folderName
 New-Item -ItemType Directory -Force -Path $stage, $dist | Out-Null
+function Get-PackageSha256([string]$Path) {
+  $algorithm = [Security.Cryptography.SHA256]::Create()
+  $stream = [IO.File]::OpenRead($Path)
+  try { return ([BitConverter]::ToString($algorithm.ComputeHash($stream))).Replace('-', '').ToLowerInvariant() }
+  finally { $stream.Dispose(); $algorithm.Dispose() }
+}
 try {
   foreach ($directory in @('src', 'scripts')) {
     Copy-Item -LiteralPath (Join-Path $root $directory) -Destination (Join-Path $stage $directory) -Recurse
@@ -16,7 +22,7 @@ try {
   $manifest = Get-ChildItem -LiteralPath $stage -File -Recurse | ForEach-Object {
     [pscustomobject]@{
       path = $_.FullName.Substring($stage.Length + 1).Replace('\', '/')
-      sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+      sha256 = Get-PackageSha256 $_.FullName
     }
   }
   $manifest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $stage 'MANIFEST.json') -Encoding utf8
