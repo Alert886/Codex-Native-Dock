@@ -27,3 +27,24 @@ jobs:
           name: Codex-Native-Dock-Windows
           path: dist/Codex-Native-Dock-Windows-*.zip
           if-no-files-found: error
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test shared source contracts
+        run: npm run test:node
+      - name: Check JavaScript and CDP guards
+        run: npm run check
+      - name: Check macOS shell scripts
+        run: npm run check:macos
+      - name: Build the one-click macOS archive
+        run: npm run package:macos
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Codex-Native-Dock-macOS
+          path: dist/Codex-Native-Dock-macOS-*.zip
+          if-no-files-found: error

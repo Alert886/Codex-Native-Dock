@@ -57,7 +57,7 @@ if ($process.HasExited) {
 $startedAt = (Get-Process -Id $process.Id).StartTime.ToUniversalTime().ToString('o')
 $state = [ordered]@{
   schemaVersion = 1
-  version = '0.1.0'
+  version = '0.2.0'
   port = [int]$endpoint.Port
   browserId = "$($endpoint.BrowserId)"
   injectorPid = $process.Id

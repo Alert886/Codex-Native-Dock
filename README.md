@@ -15,7 +15,9 @@
 - ChatGPT 模式保留快捷控制，但不显示额度条（ChatGPT 额度不在这里伪造为 100%）。
 - 账户额度从 Codex 已加载的本机账户状态读取；上下文 Token 从当前任务 JSONL 会话增量读取。数据不上传，也不扫描消息正文。
 
-## 一键安装（Windows 11）
+## 一键安装
+
+### Windows 11
 
 1. 从 [Releases](https://github.com/Alert886/Codex-Native-Dock/releases/latest) 下载 Windows ZIP 并完整解压。
 2. 双击 `Install-Codex-Native-Dock.cmd`。
@@ -25,9 +27,19 @@
 
 系统若没有 Node.js 22+，安装器会从 `nodejs.org` 下载便携版，并使用官方 `SHASUMS256.txt` 校验后再启用。
 
+### macOS
+
+1. 从 [Releases](https://github.com/Alert886/Codex-Native-Dock/releases/latest) 下载 macOS ZIP 并完整解压。
+2. 双击 `Install-Codex-Native-Dock.command`；若 macOS 首次阻止运行，请右键文件并选择“打开”。
+3. 安装器会验证 Codex 应用签名，必要时提示重启一次 Codex。
+
+支持 Apple Silicon 与 Intel Mac。安装后桌面会生成启动和恢复入口；Codex 更新或普通启动后未显示工具栏时，双击桌面的 `Codex Native Dock.command` 即可恢复。
+
+安装器优先复用 Codex 自带且签名有效的 Node.js；版本不满足要求时，才会下载并校验官方便携版。
+
 ## 恢复原生界面
 
-双击 `Restore-Codex-Native-Dock.cmd`。恢复只移除本项目的 DOM、后台进程、快捷方式和 `%LOCALAPPDATA%\CodexNativeDock`，不会修改 Codex 安装文件。
+Windows 双击 `Restore-Codex-Native-Dock.cmd`；macOS 双击桌面的 `Restore Codex Native Dock.command`。恢复只移除本项目的 DOM、后台进程、快捷方式和用户目录内的运行文件，不会修改 Codex 安装文件。
 
 ## 开发与验证
 
@@ -51,8 +63,8 @@ powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File scripts\verify.ps1
 
 ## 边界
 
-- 当前一键安装支持 Microsoft Store 版 Codex for Windows。
-- Codex 更新后，使用桌面快捷方式启动即可重新注入；无需修改或重打包 `app.asar`。
+- 当前一键安装支持 Microsoft Store 版 Codex for Windows，以及签名标识为 `com.openai.codex` 的官方 macOS 应用。
+- Codex 更新后，使用桌面快捷方式启动即可重新注入；无需修改或重打包应用文件。
 - 本项目不是 OpenAI 官方产品，详见 [NOTICE.md](NOTICE.md)。
 
 ## License
