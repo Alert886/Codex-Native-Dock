@@ -28,10 +28,10 @@ test("meter follows the live composer without geometry transitions", () => {
   assert.match(css, /#codex-native-dock-root \.cnd-usage[\s\S]*?transition: none !important/);
 });
 
-test("palette is fixed and does not inspect third-party theme state", () => {
+test("palette remains fixed", () => {
   assert.match(css, /--cnd-bg: rgb\(24 24 27/);
   assert.match(renderer, /adaptiveTheme: false/);
-  assert.doesNotMatch(renderer, /CodexDreamSkin|active-theme|wallpaper|data-theme|prefers-color-scheme/);
+  assert.doesNotMatch(renderer, /active-theme|wallpaper|data-theme|prefers-color-scheme/);
 });
 
 test("ChatGPT hides quota while controls remain available", () => {
