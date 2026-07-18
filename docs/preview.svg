@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Codex Native Dock preview</title>
+  <desc id="desc">Fixed dark Codex-style composer usage meter and lower-right quick control dock.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111217"/><stop offset="1" stop-color="#090a0f"/></linearGradient>
+    <linearGradient id="fill" x1="0" x2="1"><stop stop-color="#a990f4"/><stop offset="1" stop-color="#7c5ce5"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-opacity=".45"/></filter>
+  </defs>
+  <rect width="1200" height="650" rx="28" fill="url(#bg)"/>
+  <rect x="0" width="250" height="650" fill="#17181d"/><path d="M250 0v650" stroke="#31323a"/>
+  <g fill="#a1a1aa" font-family="Segoe UI, sans-serif" font-size="17">
+    <text x="28" y="55" fill="#f4f4f5" font-size="22" font-weight="700">Codex</text><text x="28" y="105">＋ New task</text>
+    <text x="28" y="165">Projects</text><text x="44" y="205">Native Dock</text><text x="44" y="242">Usage meter</text><text x="44" y="279">Quick controls</text>
+  </g>
+  <text x="360" y="85" fill="#f4f4f5" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">One component. Two useful surfaces.</text>
+  <text x="360" y="125" fill="#a1a1aa" font-family="Segoe UI, sans-serif" font-size="17">Fixed Codex-native palette · local usage only · reversible install</text>
+  <g filter="url(#shadow)"><rect x="340" y="418" width="720" height="126" rx="22" fill="#111219" stroke="#353640"/>
+    <text x="365" y="458" fill="#777985" font-family="Segoe UI, sans-serif" font-size="18">Ask Codex anything</text>
+    <text x="365" y="510" fill="#f4f4f5" font-family="Segoe UI, sans-serif" font-size="19">＋</text><circle cx="1014" cy="504" r="24" fill="#7c5ce5"/><path d="M1005 506l9-9 9 9M1014 498v16" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="340" y="552" width="720" height="3" rx="2" fill="#2b2c34"/><rect x="340" y="552" width="638" height="3" rx="2" fill="url(#fill)"/>
+  <g filter="url(#shadow)"><rect x="340" y="332" width="720" height="70" rx="15" fill="#202124" stroke="#44454e"/>
+    <path d="M580 342v50M820 342v50" stroke="#41424a"/><g font-family="Segoe UI, sans-serif"><text x="365" y="355" fill="#a1a1aa" font-size="12">REMAINING</text><text x="365" y="382" fill="#f4f4f5" font-size="18" font-weight="700">88.7%</text><text x="605" y="355" fill="#a1a1aa" font-size="12">CONTEXT</text><text x="605" y="382" fill="#f4f4f5" font-size="18" font-weight="700">29.2K / 258.4K</text><text x="845" y="355" fill="#a1a1aa" font-size="12">RESET</text><text x="845" y="382" fill="#f4f4f5" font-size="18" font-weight="700">07/24</text></g>
+  </g>
+  <g filter="url(#shadow)"><rect x="1126" y="365" width="48" height="238" rx="24" fill="#18181b" stroke="#41424a"/><circle cx="1150" cy="392" r="17" fill="none" stroke="#7c5ce5" stroke-width="4"/><text x="1150" y="396" fill="#f4f4f5" text-anchor="middle" font-family="Consolas" font-size="8">89</text>
+    <path d="M1138 424h24M1143 449h14M1143 485h14M1145 521l5-5 5 5M1150 516v14M1145 566l5 5 5-5M1150 557v14" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

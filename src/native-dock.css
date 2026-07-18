@@ -1,0 +1,314 @@
+/* Fixed Codex-native palette. This project deliberately does not inspect or
+   adapt to Dream Skin, wallpaper, character, or third-party theme state. */
+#codex-native-dock-root {
+  --cnd-bg: rgb(24 24 27 / .94);
+  --cnd-bg-raised: rgb(32 33 36 / .97);
+  --cnd-border: rgb(255 255 255 / .14);
+  --cnd-text: #f4f4f5;
+  --cnd-muted: #a1a1aa;
+  --cnd-accent: #7c5ce5;
+  --cnd-accent-soft: rgb(124 92 229 / .24);
+  --cnd-danger: #ef6a73;
+  --cnd-warning: #e5a449;
+  color-scheme: dark !important;
+  pointer-events: none !important;
+}
+
+#codex-native-dock-root,
+#codex-native-dock-root * {
+  box-sizing: border-box !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+
+#codex-native-dock-root .cnd-tools {
+  position: fixed !important;
+  right: 14px !important;
+  bottom: 14px !important;
+  z-index: 2147483000 !important;
+  display: flex !important;
+  width: 42px !important;
+  padding: 5px 4px !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  color: var(--cnd-text) !important;
+  background: var(--cnd-bg) !important;
+  border: 1px solid var(--cnd-border) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 16px 42px rgb(0 0 0 / .34), inset 0 1px 0 rgb(255 255 255 / .04) !important;
+  backdrop-filter: blur(16px) saturate(1.05) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.05) !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+#codex-native-dock-root .cnd-quota-orb {
+  display: grid !important;
+  width: 32px !important;
+  height: 32px !important;
+  place-items: center !important;
+  color: var(--cnd-text) !important;
+  background: conic-gradient(var(--cnd-accent) var(--cnd-quota, 0%), rgb(255 255 255 / .10) 0) !important;
+  border: 1px solid rgb(255 255 255 / .12) !important;
+  border-radius: 50% !important;
+  font: 700 9px/1 ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  box-shadow: inset 0 0 0 4px var(--cnd-bg), 0 0 14px var(--cnd-accent-soft) !important;
+}
+
+#codex-native-dock-root .cnd-divider {
+  width: 22px !important;
+  height: 1px !important;
+  margin: 1px 0 !important;
+  background: var(--cnd-border) !important;
+}
+
+#codex-native-dock-root .cnd-tool-item {
+  position: relative !important;
+  display: grid !important;
+  width: 34px !important;
+  height: 34px !important;
+  place-items: center !important;
+}
+
+#codex-native-dock-root .cnd-tool-button {
+  display: grid !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  place-items: center !important;
+  color: var(--cnd-muted) !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: color .14s ease, background-color .14s ease, border-color .14s ease, transform .14s ease !important;
+}
+
+#codex-native-dock-root .cnd-tool-button svg {
+  width: 17px !important;
+  height: 17px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+#codex-native-dock-root .cnd-tool-button:hover:not(:disabled),
+#codex-native-dock-root .cnd-tool-button:focus-visible,
+#codex-native-dock-root .cnd-tool-button.is-active {
+  color: #fff !important;
+  background: var(--cnd-accent-soft) !important;
+  border-color: rgb(151 126 235 / .52) !important;
+  transform: translateY(-1px) !important;
+}
+
+#codex-native-dock-root .cnd-tool-button:focus-visible {
+  outline: 2px solid rgb(151 126 235 / .72) !important;
+  outline-offset: 2px !important;
+}
+
+#codex-native-dock-root .cnd-tool-button:disabled {
+  opacity: .3 !important;
+  cursor: default !important;
+  transform: none !important;
+}
+
+#codex-native-dock-root .cnd-tooltip {
+  position: absolute !important;
+  top: 50% !important;
+  right: calc(100% + 9px) !important;
+  width: max-content !important;
+  max-width: 220px !important;
+  padding: 5px 8px !important;
+  color: var(--cnd-text) !important;
+  background: var(--cnd-bg-raised) !important;
+  border: 1px solid var(--cnd-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgb(0 0 0 / .34) !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translate(5px, -50%) !important;
+  transition: opacity .12s ease, visibility .12s ease, transform .12s ease !important;
+}
+
+#codex-native-dock-root .cnd-tool-item:hover > .cnd-tooltip,
+#codex-native-dock-root .cnd-tool-item:focus-within > .cnd-tooltip {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(0, -50%) !important;
+}
+
+#codex-native-dock-root .cnd-focus-time {
+  display: none !important;
+  min-width: 47px !important;
+  padding: 3px 6px !important;
+  color: var(--cnd-muted) !important;
+  background: rgb(255 255 255 / .05) !important;
+  border: 1px solid var(--cnd-border) !important;
+  border-radius: 999px !important;
+  font: 650 10px/1.15 ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  text-align: center !important;
+}
+
+html.codex-native-dock-focus #codex-native-dock-root .cnd-tools {
+  width: auto !important;
+  border-radius: 18px !important;
+}
+
+html.codex-native-dock-focus #codex-native-dock-root .cnd-tool-item:not([data-action="focus"]),
+html.codex-native-dock-focus #codex-native-dock-root .cnd-quota-orb,
+html.codex-native-dock-focus #codex-native-dock-root .cnd-divider {
+  display: none !important;
+}
+
+html.codex-native-dock-focus #codex-native-dock-root .cnd-focus-time {
+  display: block !important;
+}
+
+#codex-native-dock-root .cnd-usage {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 2147482990 !important;
+  width: 240px !important;
+  height: 10px !important;
+  min-height: 10px !important;
+  pointer-events: auto !important;
+  transform-origin: left top !important;
+  transition: none !important;
+  -webkit-app-region: no-drag !important;
+  --cnd-remaining: 0%;
+}
+
+#codex-native-dock-root .cnd-usage-track {
+  position: absolute !important;
+  inset: 2px 0 auto !important;
+  height: 2px !important;
+  overflow: visible !important;
+  background: rgb(255 255 255 / .12) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / .04) !important;
+  cursor: help !important;
+  transition: none !important;
+}
+
+#codex-native-dock-root .cnd-usage:hover .cnd-usage-track,
+#codex-native-dock-root .cnd-usage:focus-visible .cnd-usage-track {
+  inset: 0 1px auto !important;
+  height: 7px !important;
+  background: rgb(124 92 229 / .17) !important;
+  box-shadow: 0 0 0 1px rgb(151 126 235 / .28), 0 0 14px rgb(124 92 229 / .27) !important;
+  transition: height .15s ease, inset .15s ease, box-shadow .15s ease !important;
+}
+
+#codex-native-dock-root .cnd-usage-fill {
+  width: var(--cnd-remaining) !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, #a990f4, var(--cnd-accent)) !important;
+  border-radius: inherit !important;
+  box-shadow: 0 0 7px rgb(124 92 229 / .42) !important;
+  transition: width .5s cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+#codex-native-dock-root .cnd-usage.is-initializing .cnd-usage-fill {
+  transition: none !important;
+}
+
+#codex-native-dock-root .cnd-usage[data-level="low"] .cnd-usage-fill {
+  background: linear-gradient(90deg, #f0c173, var(--cnd-warning)) !important;
+}
+
+#codex-native-dock-root .cnd-usage[data-level="critical"] .cnd-usage-fill {
+  background: linear-gradient(90deg, #f69aa0, var(--cnd-danger)) !important;
+}
+
+#codex-native-dock-root .cnd-usage-popover {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 13px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  padding: 8px !important;
+  color: var(--cnd-text) !important;
+  background: var(--cnd-bg-raised) !important;
+  border: 1px solid var(--cnd-border) !important;
+  border-radius: 13px !important;
+  box-shadow: 0 16px 40px rgb(0 0 0 / .42) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(7px) scaleY(.82) !important;
+  transform-origin: center bottom !important;
+  transition: none !important;
+}
+
+#codex-native-dock-root .cnd-usage:hover .cnd-usage-popover,
+#codex-native-dock-root .cnd-usage:focus-visible .cnd-usage-popover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+#codex-native-dock-root .cnd-usage-cell {
+  display: flex !important;
+  min-width: 0 !important;
+  padding: 4px 10px !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  border-left: 1px solid var(--cnd-border) !important;
+}
+
+#codex-native-dock-root .cnd-usage-cell:first-child {
+  border-left: 0 !important;
+}
+
+#codex-native-dock-root .cnd-usage-cell span,
+#codex-native-dock-root .cnd-usage-cell strong {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+#codex-native-dock-root .cnd-usage-cell span {
+  color: var(--cnd-muted) !important;
+  font-size: 9.5px !important;
+  font-weight: 650 !important;
+  letter-spacing: .06em !important;
+}
+
+#codex-native-dock-root .cnd-usage-cell strong {
+  color: var(--cnd-text) !important;
+  font-size: 11.5px !important;
+  font-weight: 690 !important;
+}
+
+#codex-native-dock-root .cnd-usage.is-unavailable .cnd-usage-fill {
+  width: 18% !important;
+  opacity: .35 !important;
+}
+
+@media (max-width: 760px) {
+  #codex-native-dock-root .cnd-tools {
+    right: 8px !important;
+    bottom: 8px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #codex-native-dock-root,
+  #codex-native-dock-root * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+}
