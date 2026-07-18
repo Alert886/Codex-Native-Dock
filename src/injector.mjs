@@ -5,7 +5,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { readUsage } from "./usage-store.mjs";
 
-const VERSION = "0.1.0";
+const VERSION = "0.2.0";
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]", "::1"]);
 const PAGE_URLS = new Set(["app://-/index.html", "app://codex/"]);
 const PAGE_ID = /^[A-Za-z0-9._:-]{1,256}$/;

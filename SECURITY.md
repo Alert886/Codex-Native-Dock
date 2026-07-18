@@ -8,7 +8,9 @@ The installer deliberately:
 - validates the browser and page WebSocket identities before connecting;
 - downloads Node.js only from `nodejs.org` and verifies its SHA-256 against
   the official checksum list;
-- writes only below `%LOCALAPPDATA%\CodexNativeDock` plus two user shortcuts;
-- never modifies `WindowsApps`, `app.asar`, or the Codex installation;
+- writes only below `%LOCALAPPDATA%\CodexNativeDock` on Windows or
+  `~/Library/Application Support/CodexNativeDock` on macOS, plus user shortcuts;
+- validates the official macOS app signature before using its bundled runtime;
+- never modifies `WindowsApps`, the macOS app bundle, `app.asar`, or the Codex installation;
 - stops an injector process only when PID, executable, command line, script
   path, and process start time match the recorded state.

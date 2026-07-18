@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$archive = Join-Path $root 'dist\Codex-Native-Dock-Windows-v0.1.0.zip'
+$version = (Get-Content -LiteralPath (Join-Path $root 'package.json') -Raw | ConvertFrom-Json).version
+$archive = Join-Path $root "dist\Codex-Native-Dock-Windows-v$version.zip"
 if (-not (Test-Path -LiteralPath $archive)) { throw 'Build the Windows archive before this test.' }
 $testRoot = Join-Path $env:TEMP ('Codex Native Dock package test ' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $testRoot | Out-Null
