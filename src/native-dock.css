@@ -1,5 +1,4 @@
-/* Fixed Codex-native palette. This project deliberately does not inspect or
-   adapt to Dream Skin, wallpaper, character, or third-party theme state. */
+/* Fixed Codex-native palette. */
 #codex-native-dock-root {
   --cnd-bg: rgb(24 24 27 / .94);
   --cnd-bg-raised: rgb(32 33 36 / .97);

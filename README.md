@@ -2,7 +2,7 @@
 
 [![test](https://github.com/Alert886/Codex-Native-Dock/actions/workflows/test.yml/badge.svg)](https://github.com/Alert886/Codex-Native-Dock/actions/workflows/test.yml)
 
-把“剩余额度细条”和“右下角快捷控制栏”合并成一个轻量组件，保持固定的 **Codex 原生深色配色**。它不会读取或自动适配 Dream Skin、长夜月、满穗或其他第三方主题。
+把“剩余额度细条”和“右下角快捷控制栏”合并成一个轻量组件，保持固定的 **Codex 原生深色配色**。
 
 ![Codex Native Dock preview](docs/preview.svg)
 

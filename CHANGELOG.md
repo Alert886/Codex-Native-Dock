@@ -8,6 +8,6 @@
 - Add focus timer, native sidebar toggle, current/previous turn navigation,
   and latest-message navigation.
 - Hide quota details in ChatGPT mode.
-- Use a fixed Codex-native dark palette with no third-party theme detection.
+- Use a consistent Codex-native dark palette.
 - Add verified portable Node.js fallback, one-click Windows install, live
   verification, and reversible uninstall.
